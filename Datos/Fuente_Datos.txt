@@ -1,5 +1,0 @@
-La fuente de datos principal es Anime Dataset 2023 (https://www.kaggle.com/datasets/dbdmobile/myanimelist-dataset),
-en donde tenemos tres archivos: anime-dataset-2023.csv, users-details-2023.csv y users-score-2023.csv
-
-Por temas de tamaño, solo se pueden subir los archivos anime-dataset-2023.csv y users-details-2023.csv al repositorio,
-ya que users-score-2023.csv pesa más de 1GB
