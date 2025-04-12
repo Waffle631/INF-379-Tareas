@@ -7,30 +7,30 @@ import networkx as nx
 import seaborn as sns
 
 # Cargar el archivo CSV
-# df_users = pd.read_csv("Datos/users-details-2023.csv")
-# df_scores = pd.read_csv("Datos/users-score-2023.csv")
-# df_anime = pd.read_csv("Datos/anime-dataset-2023.csv")
-# # Obtener todos los géneros en un solo string
-# generos_unicos = set()
-# df_anime["Genres"].dropna().str.split(", ").apply(generos_unicos.update)
+df_users = pd.read_csv("Datos/users-details-2023.csv")
+df_scores = pd.read_csv("Datos/users-score-2023.csv")
+df_anime = pd.read_csv("Datos/anime-dataset-2023.csv")
+# Obtener todos los géneros en un solo string
+generos_unicos = set()
+df_anime["Genres"].dropna().str.split(", ").apply(generos_unicos.update)
 
-# # Contar la frecuencia de cada género en todo el dataset
-# genero_frecuencia = {}
-# for genero in generos_unicos:
-#     if genero != "UNKNOWN":
-#         genero_frecuencia[genero] = df_anime["Genres"].str.contains(genero, na=False).sum()
+# Contar la frecuencia de cada género en todo el dataset
+genero_frecuencia = {}
+for genero in generos_unicos:
+    if genero != "UNKNOWN":
+        genero_frecuencia[genero] = df_anime["Genres"].str.contains(genero, na=False).sum()
 
-# # Generar la nube de palabras
-# wordcloud = WordCloud(
-#     width=800, height=400, background_color="black", colormap="coolwarm"
-# ).generate_from_frequencies(genero_frecuencia)
+# Generar la nube de palabras
+wordcloud = WordCloud(
+    width=800, height=400, background_color="black", colormap="coolwarm"
+).generate_from_frequencies(genero_frecuencia)
 
-# # Mostrar el gráfico
-# plt.figure(figsize=(10, 5))
-# plt.imshow(wordcloud, interpolation="bilinear")
-# plt.axis("off")  # Quitar los ejes
-# plt.title("Nube de Palabras de Géneros de Anime", fontsize=14)
-# plt.show()
+# Mostrar el gráfico
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")  # Quitar los ejes
+plt.title("Nube de Palabras de Géneros de Anime", fontsize=14)
+plt.show()
 
 # Cargar el dataset
 df_anime = pd.read_csv('Datos/anime-dataset-2023.csv')
