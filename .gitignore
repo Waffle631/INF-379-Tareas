@@ -172,5 +172,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-/Datos/*.csv
+Datos/users-score-2023.csv
